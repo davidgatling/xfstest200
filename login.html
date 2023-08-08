@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://unpkg.com/petite-vue" defer init></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html{
+            overflow: hidden;
+        }
+    </style>
+    <title>Zone</title>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E904T5V6V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E904T5V6V4');
+</script>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-yin-yang" style="margin-right: 5px;"></i>Zone</a>
+        </div>
+    </nav>
+      <div class="container mt-5">
+        <h2>Login</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <form>
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+              <p class="mt-3 mb-3"><a href="signup.html">Don't have an account? Signup.</a></p>
+            </form>
+          </div>
+          <div class="col-md-4 spinner"><i class="bi bi-yin-yang" style="margin-right: 5px; z-index: -1; font-size: 500px;"></i></div>
+        </div>
+      </div>
+  <footer class="bg-light text-center foooter2 py-3">
+    <div class="container">
+      <p>&copy; 2023 Zone. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+    
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+    
+      try {
+        const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+        console.log("User logged in:", userCredential.user);
+      } catch (error) {
+        console.error("Error logging in:", error);
+      }
+    });
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"></script>
+  <script type="module">
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAP1CfVWgeMF11oiZa_ZG3rShvCAVstVwg",
+  authDomain: "x-fs-test-200.firebaseapp.com",
+  projectId: "x-fs-test-200",
+  storageBucket: "x-fs-test-200.appspot.com",
+  messagingSenderId: "578269579292",
+  appId: "1:578269579292:web:d9e9ab355dc78945eaf7d9",
+  measurementId: "G-E904T5V6V4"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

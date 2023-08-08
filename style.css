@@ -1,0 +1,40 @@
+  .border-hover {
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 2px solid transparent; /* Set initial border to transparent */
+    transition: background-color 0.3s; /* Add transition for smooth effect */
+  }
+
+  .border-hover:hover {
+    background-color: #ffffff; /* Show border on hover */
+  }
+.foooter{
+    margin-top: -100px;
+}
+.foooter2{
+    margin-top: 0px;
+}
+.spinner{
+    z-index: -999;
+    margin-top: -50%;
+    margin-left: 70%;
+    color: #2a2c30;
+    animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
